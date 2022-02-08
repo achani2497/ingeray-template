@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Centrale Sans';
+    src: local('Centrale Sans Bold'), local('Centrale-Sans-Bold'),
+        url('CentraleSans-Bold.woff2') format('woff2'),
+        url('CentraleSans-Bold.woff') format('woff'),
+        url('CentraleSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
