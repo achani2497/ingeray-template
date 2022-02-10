@@ -21,14 +21,11 @@
 <script>
 export default {
   props:['header'],
-  data:function(){
-    return{
-
+  setup(){
+    return {
+      
     }
   },
-  methods:{
-    
-  }
 }
 </script>
 <style scoped>

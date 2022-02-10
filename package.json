@@ -10,7 +10,9 @@
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "vee-validate": "^4.5.8",
+    "vue": "^3.0.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

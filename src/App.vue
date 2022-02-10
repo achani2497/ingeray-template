@@ -61,7 +61,12 @@ export default {
   --light-gray: #e1e1e1;
   --shadow: hsl(0 0% 50% / 0.4);
   --shadow-lilac: hsl(215 42% 50% / 0.7);
-  --shadow-blue: hsl(228 73% 5% / 0.6)
+  --shadow-blue: hsl(228 73% 5% / 0.6);
+  --primary-color: #0071fe;
+  --error-color: #f23648;
+  --error-bg-color: #fddfe2;
+  --success-color: #21a67a;
+  --success-bg-color: #e0eee4;
 }
 .flex{
   display: flex;
@@ -82,14 +87,11 @@ export default {
 /* MEDIA QUERIES */
   /* Para tablets   */
   @media screen and (min-width: 768px) {
-    
   }
 
   /* Para pantallas mas grandes */
   @media screen and (min-width: 1024px) {
-    
   }
   @media screen and (min-width: 1200px) {
-    
   }
 </style>

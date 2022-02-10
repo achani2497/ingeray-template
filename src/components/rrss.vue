@@ -33,19 +33,38 @@
         </div>
         <div class="seccion" id="seccion3">
             <div class="title t-22"> Redes Sociales </div>
-            <div class="iconos flex">
-                <a href="https://www.facebook.com/IngeRayVET" target="_blank" ref="noopener noreferrer">
-                    <div class="icon facebook"></div>
-                </a> 
-                <a href="https://www.instagram.com/p/CMK8U71DnXq/" target="_blank" ref="noopener noreferrer">
-                    <div class="icon instagram"></div>
-                </a> 
-                <a href="https://www.youtube.com/channel/UCmPvf69gHGonIM2fglmhBig" target="_blank" ref="noopener noreferrer">
-                    <div class="icon youtube"></div>
-                </a> 
+            <div class="flex column">
+                <div class="division">
+                    <span class="title t-19">División Veterinaria</span>
+                    <div class="iconos">
+                        <a href="https://www.facebook.com/IngeRayVET" target="_blank" ref="noopener noreferrer">
+                            <div class="icon facebook-vet"></div>
+                        </a> 
+                        <a href="https://www.instagram.com/inge_ray_vet/?hl=es-la" target="_blank" ref="noopener noreferrer">
+                            <div class="icon instagram-vet"></div>
+                        </a> 
+                        <a href="https://www.youtube.com/channel/UCmPvf69gHGonIM2fglmhBig" target="_blank" ref="noopener noreferrer">
+                            <div class="icon youtube-vet"></div>
+                        </a> 
+                    </div>
+                </div>
+                <div class="division">
+                    <span class="title t-19">División Humanos</span>
+                    <div class="iconos">
+                        <a href="https://www.facebook.com/IngeRayEquipamientoMedico" target="_blank" ref="noopener noreferrer">
+                            <div class="icon facebook-hum"></div>
+                        </a> 
+                        <a href="https://www.instagram.com/ingerayequipomedico/?hl=es-la" target="_blank" ref="noopener noreferrer">
+                            <div class="icon instagram-hum"></div>
+                        </a> 
+                        <a href="https://www.youtube.com/channel/UCCP1syiaiGb3GE65LyxnDAA" target="_blank" ref="noopener noreferrer">
+                            <div class="icon youtube-hum"></div>
+                        </a> 
+                    </div>
+                </div>
             </div>
         </div>
-        <a class="icon whatsapp" href="https://wa.me/5491149604301" target="_blank" ref="noopener noreferrer"></a>
+        <a class="icon whatsapp" href="https://wa.me/5491155044427" target="_blank" ref="noopener noreferrer"></a>
     </div>
 </template>
 <style scoped>
@@ -58,7 +77,7 @@
     flex-direction: column;
     gap: 2rem;
     text-align: center;
-    font-size: 17px;
+    font-size: 16px;
 }
 .seccion{
     display: flex;
@@ -82,6 +101,7 @@
     gap: .3rem;
 }
 .iconos{
+    display: flex;
     justify-content: space-around;
     width: 100%;
     max-width: 250px;
@@ -91,16 +111,31 @@
     width: 60px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 105%;
+    background-size: 150%;
 }
-.facebook{
-    background-image: url('~@/assets/images/rrss/facebook.svg');
+.division{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.instagram{
-    background-image: url('~@/assets/images/rrss/instagram.svg');
+.facebook-vet{
+    background-image: url('~@/assets/images/rrss/veterinaria/facebook.svg');
 }
-.youtube{
-    background-image: url('~@/assets/images/rrss/youtube.svg');
+.instagram-vet{
+    background-image: url('~@/assets/images/rrss/veterinaria/instagram.svg');
+}
+.youtube-vet{
+    background-image: url('~@/assets/images/rrss/veterinaria/youtube.svg');
+}
+.facebook-hum{
+    background-image: url('~@/assets/images/rrss/humanos/facebook.svg');
+}
+.instagram-hum{
+    background-image: url('~@/assets/images/rrss/humanos/instagram.svg');
+}
+.youtube-hum{
+    background-image: url('~@/assets/images/rrss/humanos/youtube.svg');
 }
 .whatsapp{
     position: absolute;
@@ -113,7 +148,27 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    animation: float 1.5s linear infinite
 }
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(-3px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    75%{
+        transform: translateY(3px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    
+}
+
 @media screen and (min-width: 541px) {
     .telefonos{
         justify-content: space-around;
@@ -179,6 +234,10 @@
     }
     #seccion3{
         grid-area: unset;
+        align-items: flex-start;
+    }
+    .division{
+        justify-content: flex-start;
         align-items: flex-start;
     }
     .iconos{
