@@ -48,6 +48,7 @@ export default {
   vertical-align: middle;
 }
 .modal-container {
+  position: relative;
   width: 90%;
   max-width: 500px;
   height: auto;
@@ -80,6 +81,7 @@ export default {
   justify-content: center;
   background-color: transparent;
   border: none;
+  z-index: 10;
 }
 .modal-header button:hover{
   cursor: pointer;

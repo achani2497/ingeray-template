@@ -45,11 +45,13 @@
                 </a> 
             </div>
         </div>
+        <a class="icon whatsapp" href="https://wa.me/5491149604301" target="_blank" ref="noopener noreferrer"></a>
     </div>
 </template>
 <style scoped>
 .rrss-container{
     display: flex;
+    position: relative;
     background-color: var(--dark-lilac);
     color: white;
     padding: 1rem;
@@ -99,6 +101,18 @@
 }
 .youtube{
     background-image: url('~@/assets/images/rrss/youtube.svg');
+}
+.whatsapp{
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    border-radius: 100px;
+    right: 30px;
+    top: -50px;
+    background-image: url('~@/assets/images/rrss/whatsapp.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 @media screen and (min-width: 541px) {
     .telefonos{
