@@ -21,8 +21,9 @@
     <Modal :header="true" @close="showModal = false" v-if="showModal">
         <template #title v-if="showMessage"> Datos de contacto </template>
         <template #content>
-            <Form 
+            <ContactForm 
                 @setShowMessage="onSetMessage"
+                ref="form"
             />
         </template>
     </Modal>
@@ -113,10 +114,10 @@ img{
 <script>
 import {ref} from 'vue'
 import Modal from './Modal/Modal.vue'
-import Form from './Modal/Form.vue'
+import ContactForm from './Modal/Form.vue'
 
 export default {
-    components:{Modal, Form},
+    components:{Modal, ContactForm},
     setup() {
         let showModal   = ref(false)
         let email       = ref('')

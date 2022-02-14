@@ -5,6 +5,7 @@
         @invalid-submit="onInvalidSubmit"
         class="form flex column"
         v-if="!enviado &&!loading && !fallido"
+        ref="form"
     >
         <TextInput
             name="email"
@@ -178,6 +179,7 @@
 import {ref} from 'vue'
 import {Form} from 'vee-validate'
 import TextInput from './TextInput.vue'
+// import axios from 'axios'
 import * as Yup from 'yup'
 import Spinner from './Spinner.vue'
 import emailjs from '@emailjs/browser'
@@ -202,10 +204,23 @@ export default {
             fallido
         }
     },
+    created(){
+        emailjs.init('user_eeVYemHTnHjSJqpAxC8wh')
+    },
     methods:{
         onSubmit(){
             this.loading = true
-            emailjs.sendForm('service_ng4qgtq', 'template_6oqv2pr', this.$refs.form, 'user_eeVYemHTnHjSJqpAxC8wh')
+            let data = {
+                service_id:'service_ng4qgtq',
+                template_id:'template_6oqv2pr'
+            }
+            let template_params = {
+                email:      document.getElementById('email').value,
+                apellido:   document.getElementById('apellido').value,
+                nombre:     document.getElementById('nombre').value,
+                telefono:   document.getElementById('telefono').value
+            }
+            emailjs.send(data.service_id, data.template_id, template_params)
                 .then(response => {
                     console.log(response.text)
                     this.loading = false
@@ -216,7 +231,7 @@ export default {
                     this.loading = false
                     this.fallido = true
                     this.$emit('setShowMessage', false)
-                    console.log(e.text)
+                    console.log(e)
                 })
         },
         onInvalidSubmit(){
