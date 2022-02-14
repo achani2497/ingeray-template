@@ -33,7 +33,7 @@
         </div>
         <div class="seccion" id="seccion3">
             <div class="title t-22"> Redes Sociales </div>
-            <div class="flex column">
+            <div class="redes">
                 <div class="division">
                     <span class="title t-19">División Veterinaria</span>
                     <div class="iconos">
@@ -91,6 +91,9 @@
 .t-19{
     font-size: 17px;
 }
+#seccion1 p{
+    line-height: 25px;
+}
 .telefonos{
     gap: 1rem;
     justify-content: center;
@@ -99,6 +102,10 @@
     display: flex;
     flex-direction: column;
     gap: .3rem;
+}
+.redes{
+    display: flex;
+    flex-direction: column;
 }
 .iconos{
     display: flex;
@@ -139,16 +146,17 @@
 }
 .whatsapp{
     position: absolute;
-    height: 90px;
-    width: 90px;
+    height: 70px;
+    width: 70px;
+    right: 10px;
+    top: -40px;
     border-radius: 100px;
-    right: 30px;
-    top: -50px;
     background-image: url('~@/assets/images/rrss/whatsapp.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    animation: float 1.5s linear infinite
+    transition: all .5s ease;
+    animation: float 1.5s linear infinite;
 }
 @keyframes float{
     0%{
@@ -187,8 +195,8 @@
         "col3 col3";
         width: 100%;
         text-align: start;
-        gap: 0;
-        row-gap: 1rem;
+        column-gap: 1rem;
+        row-gap: 2rem;
     }
     .seccion{
         align-items: flex-start;
@@ -207,14 +215,24 @@
         grid-area: col3;
         align-items: center;
     }
+    .redes{
+        flex-direction: row;
+    }
+    .whatsapp{
+        height: 90px;
+        width: 90px;
+        right: 30px;
+        top: -50px;
+    }
+
 }
 @media screen and (min-width: 1024px){
     .rrss-container{
-        grid-template-columns: 1fr 2fr .5fr;
+        grid-template-columns: 1fr 2.1fr .9fr;
         grid-template-areas: unset;
         padding: 2rem;
-        gap: 2rem;
         justify-content: center;
+        gap: 0;
     }
     .t-22{
         font-size: 18px;
@@ -225,6 +243,9 @@
     #seccion2{
         justify-self: center;
         max-width: 450px;
+    }
+    .redes{
+        flex-direction: column;
     }
     .telefonos{
         justify-content: center;
@@ -243,11 +264,12 @@
     .iconos{
         justify-content: space-between;
         max-width: 220px;
+        margin-left: -10px;
     }
 }
 @media screen and (min-width: 1150px) {
     .rrss-container{
-        padding: 2rem 8rem;
+        padding: 2rem 6rem;
     }
 }
 </style>
