@@ -94,7 +94,7 @@
     align-items: center;
     text-align: center;
     font-size: 20px;
-    animation: fadeIn .6s ease-in forwards;
+    /* animation: fadeInInge .6s ease-in forwards; */
 }
 .sent{
     background-color: hsl(120, 39%, 54%);
@@ -166,11 +166,11 @@
     transform: translate(1px, -2px);
   }
 }
-@keyframes fadeIn{
-    from{
+@keyframes fadeInInge {
+    0%{
         opacity: 0;
     }
-    to{
+    100%{
         opacity: 100%;
     }
 }
@@ -179,7 +179,6 @@
 import {ref} from 'vue'
 import {Form} from 'vee-validate'
 import TextInput from './TextInput.vue'
-// import axios from 'axios'
 import * as Yup from 'yup'
 import Spinner from './Spinner.vue'
 import emailjs from '@emailjs/browser'

@@ -23,7 +23,6 @@
         <template #content>
             <ContactForm 
                 @setShowMessage="onSetMessage"
-                ref="form"
             />
         </template>
     </Modal>
